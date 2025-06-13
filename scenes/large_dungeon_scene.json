@@ -1,0 +1,578 @@
+{
+  "sceneTitle": "被遗忘的魔法学院",
+  "ambienceDescription": "这座古老的魔法学院已经荒废多年，藤蔓爬满了石墙，魔法的余韵仍在空气中弥漫。阳光透过破碎的彩色玻璃窗洒在满是灰尘的地板上，偶尔能听到远处传来神秘的回声。",
+  "map": {
+    "playerStartNode": "entrance_hall",
+    "nodes": {
+      "entrance_hall": {
+        "nodeId": "entrance_hall",
+        "name": "入口大厅",
+        "description": "宏伟的大理石柱支撑着高耸的穹顶，地面铺着华丽但已褪色的地毯。一座巨大的水晶吊灯摇摇欲坠地悬挂在头顶，微弱地发着光。墙上挂着历代院长的肖像画，他们的眼睛似乎在注视着每一个来访者。",
+        "position": { "x": 300, "y": 200 },
+        "interactables": {
+          "crystal_chandelier": {
+            "interactableId": "crystal_chandelier",
+            "type": "object",
+            "name": "水晶吊灯",
+            "description": "这盏古老的魔法吊灯似乎还有一丝魔力残留，也许可以尝试点亮它。",
+            "interactions": [
+              {
+                "interactionId": "light_chandelier",
+                "name": "点亮吊灯",
+                "description": "用魔法点亮这盏古老的水晶吊灯",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "portrait_gallery": {
+            "interactableId": "portrait_gallery",
+            "type": "object",
+            "name": "肖像画廊",
+            "description": "墙上挂着多幅历代院长的肖像画，每一幅都栩栩如生。",
+            "interactions": [
+              {
+                "interactionId": "examine_portraits",
+                "name": "仔细观察画像",
+                "description": "研究这些古老的肖像画，也许能发现什么秘密",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "library": {
+        "nodeId": "library",
+        "name": "图书馆",
+        "description": "无数的书架延伸到天花板，装满了各种古老的魔法典籍。空气中弥漫着羊皮纸和墨水的味道。一些书本还在自己翻页，发出轻微的沙沙声。角落里有一张大橡木桌，上面散落着研究笔记。",
+        "position": { "x": 150, "y": 100 },
+        "interactables": {
+          "librarian_ghost": {
+            "interactableId": "librarian_ghost",
+            "type": "npc",
+            "name": "图书管理员幽灵",
+            "description": "一位慈祥的老人幽灵，生前是这里的图书管理员。他依然在整理着书籍，仿佛不知道自己已经死去。",
+            "interactions": [
+              {
+                "interactionId": "ask_about_books",
+                "name": "询问书籍",
+                "description": "向图书管理员询问特定的魔法书籍",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "help_organize",
+                "name": "帮助整理书籍",
+                "description": "协助幽灵整理散乱的书籍",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "ancient_tome": {
+            "interactableId": "ancient_tome",
+            "type": "object",
+            "name": "古老典籍",
+            "description": "一本厚重的魔法书，封面用未知的符文装饰。",
+            "interactions": [
+              {
+                "interactionId": "read_tome",
+                "name": "阅读典籍",
+                "description": "小心地翻阅这本古老的魔法书",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "floating_books": {
+            "interactableId": "floating_books",
+            "type": "object",
+            "name": "漂浮的书籍",
+            "description": "几本书在空中缓缓漂浮，自动翻页。",
+            "interactions": [
+              {
+                "interactionId": "catch_book",
+                "name": "捕捉漂浮的书",
+                "description": "尝试抓住一本正在漂浮的书籍",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "garden": {
+        "nodeId": "garden",
+        "name": "魔法花园",
+        "description": "一个被魔法保护的室内花园，各种奇异的植物在这里生长。有些花朵会发光，有些藤蔓会轻微摆动，仿佛在和风中舞蹈。花园中央有一个小喷泉，但现在已经干涸了。",
+        "position": { "x": 450, "y": 100 },
+        "interactables": {
+          "garden_keeper": {
+            "interactableId": "garden_keeper",
+            "type": "npc",
+            "name": "花园守护者艾莉",
+            "description": "一位半精灵德鲁伊，她一直在照料这个魔法花园。虽然学院荒废了，但她仍然坚持着自己的职责。",
+            "interactions": [
+              {
+                "interactionId": "learn_herbalism",
+                "name": "学习草药学",
+                "description": "向艾莉学习如何识别和使用魔法植物",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "help_with_garden",
+                "name": "帮助打理花园",
+                "description": "协助艾莉照料花园中的植物",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "magical_flowers": {
+            "interactableId": "magical_flowers",
+            "type": "object",
+            "name": "发光花朵",
+            "description": "这些美丽的花朵散发着柔和的光芒，需要定期浇水。",
+            "interactions": [
+              {
+                "interactionId": "water_flowers",
+                "name": "浇花",
+                "description": "用水壶给发光的花朵浇水",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "collect_petals",
+                "name": "采集花瓣",
+                "description": "小心地采集一些发光花瓣作为炼金材料",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "dried_fountain": {
+            "interactableId": "dried_fountain",
+            "type": "object",
+            "name": "干涸的喷泉",
+            "description": "花园中央的喷泉已经很久没有水了，底部积满了落叶。",
+            "interactions": [
+              {
+                "interactionId": "repair_fountain",
+                "name": "修复喷泉",
+                "description": "尝试修复喷泉的魔法机关",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "clean_fountain",
+                "name": "清理喷泉",
+                "description": "清除喷泉中的落叶和杂物",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "kitchen": {
+        "nodeId": "kitchen",
+        "name": "魔法厨房",
+        "description": "这里曾经是为整个学院准备食物的地方。巨大的炉灶现在冷却了，但仍然可以感受到魔法的温暖。架子上摆放着各种炼金器具和香料罐。一口大锅悬挂在壁炉上方。",
+        "position": { "x": 500, "y": 300 },
+        "interactables": {
+          "chef_golem": {
+            "interactableId": "chef_golem",
+            "type": "npc",
+            "name": "厨师魔像老汤姆",
+            "description": "一个由石头和金属制成的魔像，专门负责烹饪。虽然学院荒废了，但它仍在试图准备不存在的食物。",
+            "interactions": [
+              {
+                "interactionId": "learn_cooking",
+                "name": "学习魔法烹饪",
+                "description": "向老汤姆学习如何制作魔法食物",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "help_cook",
+                "name": "协助烹饪",
+                "description": "帮助魔像准备一顿魔法大餐",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "magic_stove": {
+            "interactableId": "magic_stove",
+            "type": "object",
+            "name": "魔法炉灶",
+            "description": "一个大型的魔法炉灶，可以用魔法点燃。",
+            "interactions": [
+              {
+                "interactionId": "light_stove",
+                "name": "点燃炉灶",
+                "description": "用魔法重新点燃古老的炉灶",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "water_barrel": {
+            "interactableId": "water_barrel",
+            "type": "object",
+            "name": "水桶",
+            "description": "一个大木桶，里面装着清澈的井水。",
+            "interactions": [
+              {
+                "interactionId": "carry_water",
+                "name": "搬水",
+                "description": "将水桶搬到需要的地方",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "drink_water",
+                "name": "喝水",
+                "description": "喝一些清澈的井水解渴",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "spice_collection": {
+            "interactableId": "spice_collection",
+            "type": "object",
+            "name": "香料收藏",
+            "description": "架子上摆放着各种奇异的香料和调味料。",
+            "interactions": [
+              {
+                "interactionId": "examine_spices",
+                "name": "研究香料",
+                "description": "仔细研究这些魔法香料的特性",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "dormitory": {
+        "nodeId": "dormitory",
+        "name": "学生宿舍",
+        "description": "长长的走廊两侧是学生的房间。大部分房门都敞开着，里面的家具覆盖着厚厚的灰尘。偶尔能看到一些遗留的个人物品，诉说着这里曾经的生机。",
+        "position": { "x": 100, "y": 300 },
+        "interactables": {
+          "student_spirit": {
+            "interactableId": "student_spirit",
+            "type": "npc",
+            "name": "学生幽灵小玛丽",
+            "description": "一个年轻女孩的幽灵，生前是这里的学生。她似乎还在等待着上课的铃声。",
+            "interactions": [
+              {
+                "interactionId": "comfort_spirit",
+                "name": "安慰幽灵",
+                "description": "试图安慰这个迷失的学生幽灵",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "ask_about_academy",
+                "name": "询问学院历史",
+                "description": "向小玛丽了解学院的往昔时光",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "old_furniture": {
+            "interactableId": "old_furniture",
+            "type": "object",
+            "name": "旧家具",
+            "description": "房间里摆放着老旧的床铺、书桌和衣柜。",
+            "interactions": [
+              {
+                "interactionId": "search_furniture",
+                "name": "搜查家具",
+                "description": "在旧家具中寻找遗留的物品",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "clean_room",
+                "name": "清理房间",
+                "description": "清理房间中的灰尘和杂物",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "tower_bottom": {
+        "nodeId": "tower_bottom",
+        "name": "法师塔底层",
+        "description": "这里是通往法师塔的入口。螺旋楼梯向上延伸，消失在黑暗中。墙上刻着复杂的魔法符文，似乎是某种保护法术。空气中充满了魔法能量的嗡嗡声。",
+        "position": { "x": 200, "y": 400 },
+        "interactables": {
+          "magic_barrier": {
+            "interactableId": "magic_barrier",
+            "type": "object",
+            "name": "魔法屏障",
+            "description": "一道半透明的魔法屏障阻挡着楼梯的入口。",
+            "interactions": [
+              {
+                "interactionId": "dispel_barrier",
+                "name": "解除屏障",
+                "description": "尝试解除阻挡楼梯的魔法屏障",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "study_runes",
+                "name": "研究符文",
+                "description": "仔细研究墙上的魔法符文",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "tower_middle": {
+        "nodeId": "tower_middle",
+        "name": "法师塔中层",
+        "description": "塔的中层是一个圆形的实验室，到处都是炼金设备和魔法器具。桌子上摆放着各种试管和烧瓶，里面装着颜色奇异的液体。一些实验还在进行中，发出微弱的光芒。",
+        "position": { "x": 200, "y": 500 },
+        "interactables": {
+          "alchemist_ghost": {
+            "interactableId": "alchemist_ghost",
+            "type": "npc",
+            "name": "炼金术师幽灵马斯特",
+            "description": "一位专注的炼金术师幽灵，即使在死后也在继续他的研究。他身边总是环绕着各种魔法试剂。",
+            "interactions": [
+              {
+                "interactionId": "learn_alchemy",
+                "name": "学习炼金术",
+                "description": "向马斯特学习炼金术的基础知识",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "help_experiment",
+                "name": "协助实验",
+                "description": "帮助炼金术师完成他的魔法实验",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "alchemy_equipment": {
+            "interactableId": "alchemy_equipment",
+            "type": "object",
+            "name": "炼金设备",
+            "description": "精密的炼金设备，包括蒸馏器、天平和研钵。",
+            "interactions": [
+              {
+                "interactionId": "use_equipment",
+                "name": "使用设备",
+                "description": "尝试使用这些复杂的炼金设备",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "clean_equipment",
+                "name": "清洁设备",
+                "description": "清理炼金设备上的污渍和残留物",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "bubbling_potion": {
+            "interactableId": "bubbling_potion",
+            "type": "object",
+            "name": "冒泡的药剂",
+            "description": "一瓶正在冒泡的神秘药剂，散发着淡淡的香味。",
+            "interactions": [
+              {
+                "interactionId": "taste_potion",
+                "name": "品尝药剂",
+                "description": "小心地品尝这瓶神秘的药剂",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "analyze_potion",
+                "name": "分析药剂",
+                "description": "使用炼金知识分析药剂的成分",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "tower_top": {
+        "nodeId": "tower_top",
+        "name": "法师塔顶层",
+        "description": "塔顶是一个圆形的观星台，装饰着复杂的星座图案。巨大的天文望远镜指向星空，周围摆放着各种占星工具。夜空清晰可见，繁星闪烁。",
+        "position": { "x": 200, "y": 600 },
+        "interactables": {
+          "telescope": {
+            "interactableId": "telescope",
+            "type": "object",
+            "name": "天文望远镜",
+            "description": "一架精美的魔法天文望远镜，可以观察星空和远方。",
+            "interactions": [
+              {
+                "interactionId": "observe_stars",
+                "name": "观察星空",
+                "description": "使用望远镜观察夜空中的星座",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "adjust_telescope",
+                "name": "调整望远镜",
+                "description": "精细调整望远镜的焦距和方向",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "star_charts": {
+            "interactableId": "star_charts",
+            "type": "object",
+            "name": "星图",
+            "description": "古老的星图和占星图表，记录着天体的运行轨迹。",
+            "interactions": [
+              {
+                "interactionId": "study_charts",
+                "name": "研究星图",
+                "description": "仔细研究这些古老的天文图表",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "underground_chamber": {
+        "nodeId": "underground_chamber",
+        "name": "地下密室",
+        "description": "隐藏在学院地下的秘密房间，墙壁上刻满了古老的魔法符文。房间中央有一个发光的魔法阵，散发着强大的魔法能量。空气中弥漫着神秘而古老的气息。",
+        "position": { "x": 400, "y": 400 },
+        "interactables": {
+          "magic_circle": {
+            "interactableId": "magic_circle",
+            "type": "object",
+            "name": "古老魔法阵",
+            "description": "一个复杂的魔法阵，似乎具有传送或召唤的功能。",
+            "interactions": [
+              {
+                "interactionId": "activate_circle",
+                "name": "激活魔法阵",
+                "description": "尝试激活这个古老而强大的魔法阵",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "study_circle",
+                "name": "研究魔法阵",
+                "description": "仔细研究魔法阵的构造和符文",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "ancient_altar": {
+            "interactableId": "ancient_altar",
+            "type": "object",
+            "name": "古老祭坛",
+            "description": "一座石制祭坛，上面放置着几颗发光的宝石。",
+            "interactions": [
+              {
+                "interactionId": "touch_altar",
+                "name": "触摸祭坛",
+                "description": "小心地触摸古老的祭坛",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "place_offering",
+                "name": "放置供品",
+                "description": "在祭坛上放置某种供品",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      },
+      "secret_passage": {
+        "nodeId": "secret_passage",
+        "name": "秘密通道",
+        "description": "一条隐藏的石制走廊，墙壁湿润，有些地方长满了苔藓。通道很窄，只能容纳一个人通过。偶尔能听到远处传来的滴水声。这里连接着学院的各个隐秘区域。",
+        "position": { "x": 350, "y": 500 },
+        "interactables": {
+          "moss_patches": {
+            "interactableId": "moss_patches",
+            "type": "object",
+            "name": "发光苔藓",
+            "description": "墙壁上生长着一些发出微弱绿光的苔藓。",
+            "interactions": [
+              {
+                "interactionId": "collect_moss",
+                "name": "采集苔藓",
+                "description": "小心地采集一些发光的苔藓",
+                "requirements": [],
+                "effects": []
+              },
+              {
+                "interactionId": "study_moss",
+                "name": "研究苔藓",
+                "description": "仔细观察苔藓的发光特性",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          },
+          "hidden_lever": {
+            "interactableId": "hidden_lever",
+            "type": "object",
+            "name": "隐藏机关",
+            "description": "墙壁上一个几乎看不见的石制拉杆。",
+            "interactions": [
+              {
+                "interactionId": "pull_lever",
+                "name": "拉动机关",
+                "description": "小心地拉动这个隐藏的机关",
+                "requirements": [],
+                "effects": []
+              }
+            ]
+          }
+        }
+      }
+    },
+    "connections": [
+      ["entrance_hall", "library"],
+      ["entrance_hall", "garden"],
+      ["entrance_hall", "kitchen"],
+      ["entrance_hall", "dormitory"],
+      ["entrance_hall", "tower_bottom"],
+      ["library", "garden"],
+      ["garden", "kitchen"],
+      ["kitchen", "dormitory"],
+      ["tower_bottom", "tower_middle"],
+      ["tower_middle", "tower_top"],
+      ["tower_bottom", "underground_chamber"],
+      ["underground_chamber", "secret_passage"],
+      ["secret_passage", "garden"],
+      ["secret_passage", "kitchen"],
+      ["dormitory", "secret_passage"]
+    ]
+  }
+}

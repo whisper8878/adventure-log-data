@@ -1,0 +1,197 @@
+{
+  "responseType": "FullScene",
+  "scene": {
+    "sceneId": "default_start_area",
+    "sceneTitle": "冒险的起点",
+    "ambienceDescription": "一个宁静的小村庄，是许多冒险者开始旅程的地方。空气中弥漫着新鲜的草香和远方传来的鸟鸣声。",
+    "events": [
+      {
+        "eventId": "village_first_visit",
+        "name": "村庄首次访问",
+        "description": "玩家第一次来到这个村庄",
+        "trigger": "first_visit",
+        "conditions": [
+          {
+            "type": "visit_count",
+            "operator": "equals",
+            "value": 1,
+            "description": "第一次访问村庄"
+          }
+        ],
+        "effects": [
+          {
+            "effectId": "welcome_narrative",
+            "type": "narrative",
+            "data": {
+              "text": "欢迎来到新手村！这里是你冒险旅程的起点。",
+              "mood": "welcoming"
+            },
+            "description": "显示欢迎信息"
+          }
+        ],
+        "priority": 100,
+        "cooldown": 0,
+        "isRepeatable": false,
+        "tags": ["welcome", "village", "first_time"]
+      }
+    ],
+    "map": {
+      "nodes": {
+        "village_center": {
+          "nodeId": "village_center",
+          "name": "村庄中心",
+          "description": "一个繁忙的村庄广场，周围有商店、酒馆和住宅。这里是村民们聚集交流的地方。",
+          "interactables": {
+            "village_well": {
+              "interactableId": "village_well",
+              "type": "trigger",
+              "name": "古老水井",
+              "description": "一口古老的石制水井，井水清澈甘甜。",
+              "interactions": [
+                {
+                  "id": "drink_water",
+                  "text": "喝水",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "清凉的井水让你感到神清气爽。", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            },
+            "notice_board": {
+              "interactableId": "notice_board",
+              "type": "trigger",
+              "name": "告示板",
+              "description": "村庄的公告板，上面贴着各种通知和任务。",
+              "interactions": [
+                {
+                  "id": "read_notices",
+                  "text": "查看",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "告示板上贴着几张招募冒险者的告示，似乎有不少工作机会。", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 300, "y": 200 }
+        },
+        "tavern": {
+          "nodeId": "tavern",
+          "name": "金狮酒馆",
+          "description": "一家温暖舒适的酒馆，是冒险者们聚集休息的好地方。木制的桌椅散发着淡淡的酒香。",
+          "interactables": {
+            "bar_counter": {
+              "interactableId": "bar_counter",
+              "type": "trigger",
+              "name": "吧台",
+              "description": "酒馆的吧台，酒保正在擦拭酒杯。",
+              "interactions": [
+                {
+                  "id": "order_drink",
+                  "text": "点饮料",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "酒保热情地为你推荐了几种当地特色饮品。", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 200, "y": 150 }
+        },
+        "shop": {
+          "nodeId": "shop",
+          "name": "杂货铺",
+          "description": "一家小小的杂货店，出售各种冒险必需品和日用品。店主是一位和蔼的老人。",
+          "interactables": {
+            "counter": {
+              "interactableId": "counter",
+              "type": "trigger",
+              "name": "柜台",
+              "description": "杂货铺的柜台，上面摆放着各种商品。",
+              "interactions": [
+                {
+                  "id": "browse_goods",
+                  "text": "浏览商品",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "店主向你展示了店里的各种商品：绳索、火把、干粮等。", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 400, "y": 150 }
+        },
+        "forest_entrance": {
+          "nodeId": "forest_entrance",
+          "name": "森林入口",
+          "description": "通往神秘森林的入口，高大的树木形成了天然的拱门。这里是真正冒险的开始。",
+          "interactables": {},
+          "position": { "x": 300, "y": 300 }
+        }
+      },
+      "connections": [
+        ["village_center", "tavern"],
+        ["village_center", "shop"],
+        ["village_center", "forest_entrance"],
+        ["tavern", "shop"]
+      ],
+      "playerStartNode": "village_center"
+    },
+    "npcs": [
+      {
+        "npcId": "village_elder",
+        "name": "村长埃德温",
+        "description": "一位慈祥的老人，是村庄的领导者。他对这片土地的历史了如指掌。",
+        "currentLocation": "village_center",
+        "interactions": [
+          {
+            "id": "ask_about_village",
+            "text": "询问村庄",
+            "type": "dialogue",
+            "payload": {
+              "dialogueTree": {
+                "start": { "text": "这个村庄有着悠久的历史，年轻的冒险者。如果你需要任何帮助，尽管找我。", "nextInteractionIds": [] }
+              },
+              "startNode": "start"
+            }
+          }
+        ]
+      },
+      {
+        "npcId": "tavern_keeper",
+        "name": "酒保汤姆",
+        "description": "金狮酒馆的老板，总是面带微笑，知道很多有趣的故事和传说。",
+        "currentLocation": "tavern",
+        "interactions": [
+          {
+            "id": "ask_for_stories",
+            "text": "听故事",
+            "type": "dialogue",
+            "payload": {
+              "dialogueTree": {
+                "start": { "text": "你想听什么故事呢？关于勇敢的骑士，还是神秘的魔法师？", "nextInteractionIds": [] }
+              },
+              "startNode": "start"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

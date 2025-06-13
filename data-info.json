@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-06-13",
+  "scenes": {
+    "default_initial_scene.json": {
+      "name": "传统默认场景",
+      "description": "经典的新手村场景",
+      "type": "starter",
+      "size": "small",
+      "version": "1.0"
+    },
+    "universal_starter_scene.json": {
+      "name": "万能启动场景",
+      "description": "包含多种冒险类型选择的十字路口",
+      "type": "starter",
+      "size": "medium",
+      "version": "1.0"
+    },
+    "test_compact_layout.json": {
+      "name": "测试场景",
+      "description": "紧凑的测试探索区域",
+      "type": "test",
+      "size": "small",
+      "version": "1.0"
+    },
+    "test_compact_layout_with_events.json": {
+      "name": "增强测试场景",
+      "description": "包含事件系统的紧凑测试区域",
+      "type": "test",
+      "size": "small",
+      "version": "1.1"
+    },
+    "large_dungeon_scene.json": {
+      "name": "大型地牢场景",
+      "description": "复杂的多层地牢探索场景",
+      "type": "dungeon",
+      "size": "large",
+      "version": "1.0"
+    }
+  },
+  "api": {
+    "baseUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/adventure-log-data/main/",
+    "endpoints": {
+      "scenes": "scenes/",
+      "characters": "characters/",
+      "items": "items/",
+      "spells": "spells/"
+    }
+  }
+}

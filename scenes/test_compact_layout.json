@@ -1,0 +1,236 @@
+{
+  "responseType": "FullScene",
+  "scene": {
+    "sceneId": "compact_exploration_area",
+    "sceneTitle": "紧凑探索区域",
+    "ambienceDescription": "这是一个设计紧凑的探索区域，每个地点之间距离适中，便于在受限视野下进行探索。",
+    "map": {
+      "nodes": {
+        "forest_path": {
+          "nodeId": "forest_path",
+          "name": "森林小径",
+          "description": "一条蜿蜒的小径穿过茂密的森林，两旁是高大的松树和橡树。",
+          "interactables": {
+            "old_tree": {
+              "interactableId": "old_tree",
+              "type": "trigger",
+              "name": "古老大树",
+              "description": "一棵有着数百年历史的巨大橡树。",
+              "interactions": [
+                {
+                  "id": "inspect_tree",
+                  "text": "检查",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "你在树干上发现了一些古老的符文刻印。", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 300, "y": 200 }
+        },
+        "crystal_cave": {
+          "nodeId": "crystal_cave",
+          "name": "水晶洞穴",
+          "description": "洞穴内闪烁着微弱的蓝色光芒，墙壁上镶嵌着美丽的水晶。",
+          "interactables": {
+            "glowing_crystal": {
+              "interactableId": "glowing_crystal",
+              "type": "trigger",
+              "name": "发光水晶",
+              "description": "一颗散发着柔和蓝光的水晶。",
+              "interactions": [
+                {
+                  "id": "touch_crystal",
+                  "text": "触摸",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "水晶温暖而光滑，你感到一股神秘的能量。", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 300, "y": 120 }
+        },
+        "marsh_edge": {
+          "nodeId": "marsh_edge",
+          "name": "沼泽边缘",
+          "description": "湿润的空气中弥漫着神秘的雾气，远处传来不明生物的叫声。",
+          "interactables": {
+            "mysterious_mist": {
+              "interactableId": "mysterious_mist",
+              "type": "trigger",
+              "name": "神秘迷雾",
+              "description": "一团缓缓流动的淡绿色迷雾。",
+              "interactions": [
+                {
+                  "id": "observe_mist",
+                  "text": "观察",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "迷雾中似乎有什么东西在移动...", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 420, "y": 200 }
+        },
+        "abandoned_hut": {
+          "nodeId": "abandoned_hut",
+          "name": "废弃小屋",
+          "description": "一座年久失修的小木屋，门窗破损，但结构依然完整。",
+          "interactables": {
+            "old_diary": {
+              "interactableId": "old_diary",
+              "type": "trigger",
+              "name": "破旧日记",
+              "description": "一本布满灰尘的日记本。",
+              "interactions": [
+                {
+                  "id": "read_diary",
+                  "text": "阅读",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "日记记录了一位探险者的最后几天...", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 180, "y": 200 }
+        },
+        "volcano_entrance": {
+          "nodeId": "volcano_entrance",
+          "name": "火山口",
+          "description": "一个简陋但安全的营地，篝火还在燃烧，这里是你冒险的起点。",
+          "interactables": {
+            "campfire": {
+              "interactableId": "campfire",
+              "type": "trigger",
+              "name": "篝火",
+              "description": "温暖的篝火为这个营地提供光明和热量。",
+              "interactions": [
+                {
+                  "id": "warm_hands",
+                  "text": "取暖",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "温暖的火光驱散了寒意，你感到精神振奋。", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 300, "y": 280 }
+        },
+        "mountain_peak": {
+          "nodeId": "mountain_peak",
+          "name": "山峰",
+          "description": "高耸的山峰提供了一个极佳的观景点，可以俯瞰周围的地形。",
+          "interactables": {
+            "observation_point": {
+              "interactableId": "observation_point",
+              "type": "trigger",
+              "name": "观景点",
+              "description": "一个天然形成的观景台。",
+              "interactions": [
+                {
+                  "id": "survey_area",
+                  "text": "眺望",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "从这里可以看到远处的森林、沼泽和洞穴。", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 180, "y": 120 }
+        },
+        "hidden_valley": {
+          "nodeId": "hidden_valley",
+          "name": "隐秘山谷",
+          "description": "一个被群山环绕的秘密山谷，充满了未知的奥秘。",
+          "interactables": {
+            "ancient_ruins": {
+              "interactableId": "ancient_ruins",
+              "type": "trigger",
+              "name": "古代遗迹",
+              "description": "山谷中散布着神秘的石制结构。",
+              "interactions": [
+                {
+                  "id": "examine_ruins",
+                  "text": "检查",
+                  "type": "dialogue",
+                  "payload": {
+                    "dialogueTree": {
+                      "start": { "text": "这些遗迹似乎有着悠久的历史...", "nextInteractionIds": [] }
+                    },
+                    "startNode": "start"
+                  }
+                }
+              ]
+            }
+          },
+          "position": { "x": 420, "y": 120 }
+        }
+      },
+      "connections": [
+        ["forest_path", "crystal_cave"],
+        ["forest_path", "marsh_edge"],
+        ["forest_path", "abandoned_hut"],
+        ["forest_path", "volcano_entrance"],
+        ["crystal_cave", "mountain_peak"],
+        ["crystal_cave", "hidden_valley"],
+        ["marsh_edge", "hidden_valley"],
+        ["abandoned_hut", "mountain_peak"],
+        ["volcano_entrance", "abandoned_hut"],
+        ["volcano_entrance", "marsh_edge"],
+        ["mountain_peak", "hidden_valley"]
+      ],
+      "playerStartNode": "forest_path"
+    },
+    "npcs": [
+      {
+        "npcId": "forest_hermit",
+        "name": "森林隐士埃尔温",
+        "description": "一位居住在森林中的神秘老者，对周围的地形了如指掌。",
+        "currentLocation": "forest_path",
+        "interactions": [
+          {
+            "id": "ask_directions",
+            "text": "询问方向",
+            "type": "dialogue",
+            "payload": {
+              "dialogueTree": {
+                "start": { "text": "这片森林很危险，年轻人。北边是水晶洞穴，东边通向沼泽...", "nextInteractionIds": [] }
+              },
+              "startNode": "start"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+# 忽略临时文件
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# 忽略编辑器配置
+.vscode/
+.idea/
+
+# 保留所有JSON数据文件
+!*.json
+!*.md
