@@ -4,6 +4,16 @@
     "sceneId": "default_start_area",
     "sceneTitle": "冒险的起点",
     "ambienceDescription": "一个宁静的小村庄，是许多冒险者开始旅程的地方。空气中弥漫着新鲜的草香和远方传来的鸟鸣声。",
+    "storyContext": {
+      "currentTheme": "village",
+      "mentionedLocations": ["村庄", "森林", "酒馆", "杂货铺"],
+      "keyCharacters": ["村长埃德温", "酒保汤姆", "店主"],
+      "plotElements": ["adventure", "preparation"],
+      "emotionalTone": "peaceful",
+      "timeOfDay": "morning",
+      "weather": "sunny",
+      "dangerLevel": 2
+    },
     "events": [
       {
         "eventId": "village_first_visit",
@@ -73,7 +83,10 @@
                   "type": "dialogue",
                   "payload": {
                     "dialogueTree": {
-                      "start": { "text": "告示板上贴着几张招募冒险者的告示，似乎有不少工作机会。", "nextInteractionIds": [] }
+                      "start": {
+                        "text": "告示板上贴着几张招募冒险者的告示，似乎有不少工作机会。",
+                        "nextInteractionIds": []
+                      }
                     },
                     "startNode": "start"
                   }
@@ -81,7 +94,31 @@
               ]
             }
           },
-          "position": { "x": 300, "y": 200 }
+          "gridPosition": { "q": 0, "r": 0, "s": 0 },
+          "nodeType": "hub",
+          "connections": [
+            {
+              "targetNodeId": "tavern",
+              "direction": "west",
+              "pathType": "road",
+              "distance": 1,
+              "bidirectional": true
+            },
+            {
+              "targetNodeId": "shop",
+              "direction": "east",
+              "pathType": "road",
+              "distance": 1,
+              "bidirectional": true
+            },
+            {
+              "targetNodeId": "forest_entrance",
+              "direction": "south",
+              "pathType": "path",
+              "distance": 1,
+              "bidirectional": true
+            }
+          ]
         },
         "tavern": {
           "nodeId": "tavern",
@@ -108,7 +145,8 @@
               ]
             }
           },
-          "position": { "x": 200, "y": 150 }
+          "gridPosition": { "q": -1, "r": 0, "s": 1 },
+          "nodeType": "normal"
         },
         "shop": {
           "nodeId": "shop",
@@ -127,7 +165,10 @@
                   "type": "dialogue",
                   "payload": {
                     "dialogueTree": {
-                      "start": { "text": "店主向你展示了店里的各种商品：绳索、火把、干粮等。", "nextInteractionIds": [] }
+                      "start": {
+                        "text": "店主向你展示了店里的各种商品：绳索、火把、干粮等。",
+                        "nextInteractionIds": []
+                      }
                     },
                     "startNode": "start"
                   }
@@ -135,14 +176,16 @@
               ]
             }
           },
-          "position": { "x": 400, "y": 150 }
+          "gridPosition": { "q": 1, "r": 0, "s": -1 },
+          "nodeType": "normal"
         },
         "forest_entrance": {
           "nodeId": "forest_entrance",
           "name": "森林入口",
           "description": "通往神秘森林的入口，高大的树木形成了天然的拱门。这里是真正冒险的开始。",
           "interactables": {},
-          "position": { "x": 300, "y": 300 }
+          "gridPosition": { "q": 0, "r": 1, "s": -1 },
+          "nodeType": "border"
         }
       },
       "connections": [
@@ -151,7 +194,35 @@
         ["village_center", "forest_entrance"],
         ["tavern", "shop"]
       ],
-      "playerStartNode": "village_center"
+      "playerStartNode": "village_center",
+      "metadata": {
+        "version": "2.0",
+        "supportsIntelligentExpansion": true,
+        "gridSystemEnabled": true,
+        "theme": "village",
+        "expansionPoints": [
+          {
+            "nodeId": "forest_entrance",
+            "direction": "south",
+            "expansionType": "exploration",
+            "description": "通往神秘森林的深处"
+          },
+          {
+            "nodeId": "village_center",
+            "direction": "north",
+            "expansionType": "semantic",
+            "description": "村庄北部的山丘和农田"
+          }
+        ],
+        "intelligentTriggers": {
+          "forest_entrance": {
+            "triggerType": "first_visit",
+            "expansionType": "story_driven",
+            "maxNodes": 3,
+            "prompt": "玩家第一次来到森林入口，根据村庄的故事背景生成森林探索区域"
+          }
+        }
+      }
     },
     "npcs": [
       {
@@ -166,7 +237,10 @@
             "type": "dialogue",
             "payload": {
               "dialogueTree": {
-                "start": { "text": "这个村庄有着悠久的历史，年轻的冒险者。如果你需要任何帮助，尽管找我。", "nextInteractionIds": [] }
+                "start": {
+                  "text": "这个村庄有着悠久的历史，年轻的冒险者。如果你需要任何帮助，尽管找我。",
+                  "nextInteractionIds": []
+                }
               },
               "startNode": "start"
             }
