@@ -94,7 +94,7 @@
               ]
             }
           },
-          "gridPosition": { "q": 0, "r": 0, "s": 0 },
+          "gridPosition": { "x": 0, "y": 0 },
           "nodeType": "hub",
           "connections": [
             {
@@ -145,7 +145,7 @@
               ]
             }
           },
-          "gridPosition": { "q": -1, "r": 0, "s": 1 },
+          "gridPosition": { "x": -1, "y": 0 },
           "nodeType": "normal"
         },
         "shop": {
@@ -176,7 +176,7 @@
               ]
             }
           },
-          "gridPosition": { "q": 1, "r": 0, "s": -1 },
+          "gridPosition": { "x": 1, "y": 0 },
           "nodeType": "normal"
         },
         "forest_entrance": {
@@ -184,7 +184,7 @@
           "name": "森林入口",
           "description": "通往神秘森林的入口，高大的树木形成了天然的拱门。这里是真正冒险的开始。",
           "interactables": {},
-          "gridPosition": { "q": 0, "r": 1, "s": -1 },
+          "gridPosition": { "x": 0, "y": 1 },
           "nodeType": "border"
         }
       },
