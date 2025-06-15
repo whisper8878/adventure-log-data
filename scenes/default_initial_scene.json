@@ -146,7 +146,21 @@
             }
           },
           "gridPosition": { "x": -1, "y": 0 },
-          "nodeType": "normal"
+          "nodeType": "normal",
+          "mapExpansionTrigger": {
+            "enabled": true,
+            "triggerType": "first_visit",
+            "expansionType": "story_driven",
+            "maxNodes": 2,
+            "direction": "auto",
+            "prompt": "玩家第一次进入金狮酒馆，酒保汤姆提到了酒馆后面有一个神秘的地下室和储藏室。根据酒馆的温馨氛围，生成相关的探索区域。",
+            "storyContext": "酒馆是冒险者聚集的地方，这里可能隐藏着一些有趣的秘密或通往其他区域的通道。",
+            "aiInteraction": {
+              "enabled": true,
+              "message": "🍺 *酒保汤姆擦拭着酒杯，注意到你是新面孔* \n\n\"欢迎来到金狮酒馆，陌生人！我是汤姆，这里的老板。看起来你是个冒险者？\" \n\n*他神秘地压低声音* \n\n\"如果你有兴趣的话，我们酒馆后面还有一些... 特别的地方。不过那些地方可不是每个人都能去的。你看起来挺有胆量的，要不要我带你去看看？\"",
+              "triggerOnce": true
+            }
+          }
         },
         "shop": {
           "nodeId": "shop",
@@ -220,6 +234,14 @@
             "expansionType": "story_driven",
             "maxNodes": 3,
             "prompt": "玩家第一次来到森林入口，根据村庄的故事背景生成森林探索区域"
+          },
+          "tavern": {
+            "triggerType": "first_visit",
+            "expansionType": "story_driven",
+            "maxNodes": 2,
+            "prompt": "玩家第一次进入金狮酒馆，酒保提到酒馆后面的神秘区域，生成酒馆相关的探索空间",
+            "aiInteraction": true,
+            "triggerOnce": true
           }
         }
       }
